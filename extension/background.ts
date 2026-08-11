@@ -514,7 +514,7 @@ async function checkBloomFilterUpdates() {
 
         await writeLocalStorage({ dynamicBloomLastUpdate: now });
 
-        const response = await fetch('https://raw.githubusercontent.com/shinigami-eyes/configuration/main/configuration.json' + '?random=' + Math.random(), {cache: "no-cache"})
+        const response = await fetch('https://raw.githubusercontent.com/punkwasp/shinigami-eyes/main/configuration.json' + '?random=' + Math.random(), {cache: "no-cache"})
         if (response.status != 200) throw ('HTTP status ' + response.status);
         const config = <DynamicConfiguration>await response.json();
         if (!config.bloomVersion) throw 'Missing bloomVersion';
